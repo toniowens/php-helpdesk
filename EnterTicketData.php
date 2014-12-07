@@ -105,11 +105,11 @@
 						{
 							$userID = -1;
 						}
-						$urgency = stripslashes($_POST['urgency']);
+						$urgency = addslashes($_POST['urgency']);
 						$status = "New";
-						$subject = stripslashes($_POST['subject']);
-						$category = stripslashes($_POST['category']);
-						$ticketBody = stripslashes($_POST['ticket_body']);
+						$subject = addslashes($_POST['subject']);
+						$category = addslashes($_POST['category']);
+						$ticketBody = addslashes($_POST['ticket_body']);
 						$numReplies = 0;
 
 						$SQLstring = "INSERT INTO $tableName VALUES (

@@ -148,22 +148,9 @@
 						}
 						else
 						{
-							if ($close_ticket == 1)
-							{
-								$status = "Resolved";
-							}
-							else if ($is_admin == 1)
-							{
-								$status = "Awaiting User Response";
-							}
-							else
-							{
-								$status = "Awaiting Staff Response";
-							}
-
 							// Now we need to update some things in the tickets table.
 							$tableName = "tickets";
-							$SQLstring = "SELECT status, num_replies FROM $tableName WHERE ticketID = '$ticketID'";
+							$SQLstring = "SELECT userID, status, num_replies FROM $tableName WHERE ticketID = '$ticketID'";
 
 							$queryResult = @mysql_query($SQLstring, $DBconnect);
 
@@ -175,7 +162,22 @@
 							{
 								$row = mysql_fetch_assoc($queryResult);
 								$num_replies = $row['num_replies'];
+								$ticketUserID = $row['userID'];
 								$num_replies++;
+
+								if ($close_ticket == 1)
+								{
+									$status = "Resolved";
+								}
+								else if (($is_admin == 1) && ($userID != $ticketUserID))
+								{
+									$status = "Awaiting User Response";
+								}
+								else
+								{
+									$status = "Awaiting Staff Response";
+								}
+
 								$SQLstring = "UPDATE $tableName
 											  SET status = '$status', num_replies = '$num_replies'
 											  WHERE ticketID = '$ticketID'";

@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<div class="container">
+		<div class="container cf">
 			<h1>Company Helpdesk</h1>
 			<h2>View Your Tickets</h2>
 
@@ -166,13 +166,14 @@
 						echo "			<td>" . htmlentities($row['date_posted']) . "</td>\n";
 						echo "		</tr>\n";
 					}
+
+					// Close out the table.
+					echo "	</table>\n";
+					echo "</div>\n";
 				}
+
 				mysql_free_result($queryResult);
 				mysql_close($DBconnect);
-
-				// Close out the table.
-				echo "	</table>\n";
-				echo "</div>\n";
 
 				echo "<form method='POST' action='SubmitTicket.php'>\n";
 				echo "	<input type='hidden' name='userID' value='$userID' />\n";
