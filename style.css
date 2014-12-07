@@ -1,0 +1,125 @@
+*,
+*:before,
+*:after {
+	box-sizing; border-box;
+}
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+body {
+	background: #ccc url("bg.png");
+	font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+h1 { font-size: 32px; margin-bottom: 10px;}
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; text-transform: uppercase; }
+h6 { font-size: 14px; text-transform: uppercase; }
+.container {
+	background: rgba(255, 255, 255, 0.6);
+	margin: 0 auto;
+	padding: 30px;
+	width: 960px;
+}
+input {
+	margin: 5px 0;
+}
+#registration-form,
+#login-form {
+	border: 1px solid #ccc;
+	display: inline-block;
+	float: left;
+	margin: 5px;
+	padding: 10px;
+	width: 46%;
+}
+#tickets {
+	margin: 20px 0;
+}
+#tickets table,
+#tickets table td {
+	border: 1px solid #bbb;
+}
+#tickets table {
+	border-collapse: collapse;
+	width: 100%;
+}
+#tickets table th {
+	background: #333;
+	color: #fff;
+	font-size: 10px;
+	padding: 5px 10px;
+	text-transform: uppercase;
+}
+#tickets table td {
+	font-size: 12px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+}
+#ticket-side {
+	background: #fff;
+	border-right: 1px solid #444;
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+	margin-top: 0;
+	padding: 10px;
+	width: 22%;
+}
+#ticket-main {
+	background: #eee;
+	display: inline-block;
+	float: left;
+	font-size: 14px;
+	padding: 15px;
+	width: 72%;
+}
+#ticket {
+	border: 1px solid #666;
+	border-radius: 15px;
+	padding: 20px;
+}
+#replies, #reply-form {
+	margin: 0 auto;
+	width: 80%;
+}
+.reply {
+	border: 1px solid #ccc;
+	margin: 10px;
+	padding: 10px;
+}
+.reply h5 {
+	border-bottom: 1px solid #ccc;
+}
+#reply-form textarea {
+	width: 80%;
+	height: 100px;
+}
+.form-sidebar, .form-main {
+	border: 1px solid #ccc;
+	display: inline-block;
+	float: left;
+	margin: 10px;
+	padding: 20px;
+}
+.form-sidebar {
+	width: 22%;
+}
+.form-main {
+	width: 62%;
+}
+.form-main textarea {
+	width: 80%;
+	height: 100px;
+}
